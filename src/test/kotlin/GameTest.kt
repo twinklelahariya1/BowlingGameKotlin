@@ -43,4 +43,26 @@ class GameTest {
 
         assertEquals(9, game.score())
     }
+
+    @Test
+    fun shouldPlayASpareWhenRollInFirstFrame() {
+        game.roll(9)
+        game.roll(1)
+        game.roll(2)
+        game.roll(1)
+        rollZeroes(16)
+
+        assertEquals(15, game.score())
+    }
+
+    @Test
+    fun shouldPlayASpareWhenRollIn2Frames() {
+        game.roll(9)
+        game.roll(1)
+        game.roll(8)
+        game.roll(2)
+        rollZeroes(16)
+
+        assertEquals(28, game.score())
+    }
 }

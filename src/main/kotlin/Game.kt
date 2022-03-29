@@ -14,6 +14,8 @@ class Game {
         else {
             if(remainingPins >= rolls) {
                 scores.add(rolls)
+            }else{
+                scores.add(0)
             }
             remainingPins = 0
         }
@@ -21,6 +23,14 @@ class Game {
 
     fun score(): Int{
 
-        return scores.reduce{ a , b -> a + b }
+        var score = 0
+        for( x in 0 until scores.size step 2){
+            score += scores[x] + scores[x + 1]
+            if(scores[x] + scores[ x + 1 ] == 10){
+                score += scores[x + 2]
+            }
+        }
+
+        return score
     }
 }

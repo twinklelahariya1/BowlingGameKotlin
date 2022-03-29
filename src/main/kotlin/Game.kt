@@ -2,6 +2,7 @@ class Game {
 
     private val scores = ArrayList<Int>()
 
+    private val numberOfRolls = 20
     private var remainingPins = 0
 
     fun roll( rolls : Int){
@@ -24,7 +25,7 @@ class Game {
     fun score(): Int{
 
         var score = 0
-        for( x in 0 until scores.size step 2){
+        for( x in 0 until numberOfRolls step 2){
             score += scores[x] + scores[x + 1]
             if(scores[x] + scores[ x + 1 ] == 10){
                 score += scores[x + 2]

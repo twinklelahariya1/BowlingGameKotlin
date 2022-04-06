@@ -92,4 +92,15 @@ class GameTest {
 
         assertEquals(41, game.score())
     }
+
+    @Test
+    fun shouldPlayAStrikeWhenRollIn2FramesAndLastFrame() {
+        game.roll(10)
+        game.roll(10)
+        rollZeroes(14)
+        game.roll(10)
+        game.roll(10)
+
+        assertEquals(50, game.score())
+    }
 }

@@ -11,6 +11,10 @@ class Game {
             if(remainingPins > 0) {
                 scores.add(rolls)
             }
+            else if(remainingPins == 0){
+                scores.add(10)
+                scores.add(0)
+            }
         }
         else {
             if(remainingPins >= rolls) {

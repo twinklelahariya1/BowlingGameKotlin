@@ -79,4 +79,17 @@ class GameTest {
 
         assertEquals(41, game.score())
     }
+
+    @Test
+    fun shouldPlayAStrikeWhenRollInFirstFrame() {
+        game.roll(10)
+        game.roll(8)
+        game.roll(2)
+        rollZeroes(14)
+        game.roll(8)
+        game.roll(2)
+        game.roll(3)
+
+        assertEquals(41, game.score())
+    }
 }
